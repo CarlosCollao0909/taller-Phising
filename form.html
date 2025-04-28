@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro para Beca Universitaria - UDABOL</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 650px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-header {
+            background-color: #00572c;
+            color: white;
+            padding: 24px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            text-align: center;
+        }
+        .form-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 400;
+        }
+        .logo {
+            width: 180px;
+            margin-bottom: 15px;
+        }
+        .form-description {
+            padding: 15px 24px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .form-description p {
+            color: #444;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .form-body {
+            padding: 24px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #202124;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #00572c;
+        }
+        .required::after {
+            content: " *";
+            color: #d93025;
+        }
+        .submit-btn {
+            background-color: #00572c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+        }
+        .submit-btn:hover {
+            background-color: #004020;
+        }
+        .footer {
+            padding: 16px 24px;
+            font-size: 12px;
+            color: #70757a;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        .progress-bar {
+            display: flex;
+            margin: 20px 10px;
+        }
+        .progress-step {
+            background-color: #e0e0e0;
+            height: 4px;
+            flex-grow: 1;
+        }
+        .progress-step.active {
+            background-color: #00572c;
+        }
+        .progress-text {
+            text-align: right;
+            color: #70757a;
+            font-size: 12px;
+            margin-top: 4px;
+            margin-right: 10px;
+        }
+        .error-message {
+            color: #d93025;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+        #phishing-reveal {
+            display: none;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #phishing-reveal h1 {
+            color: #d93025;
+            text-align: center;
+        }
+        #phishing-reveal p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        #phishing-reveal ul {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        #phishing-reveal button {
+            background: #00572c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="form-container">
+        <div class="form-header">
+            <img src="https://imgs.search.brave.com/6Rl6bjqrytk706e42kVBV8pKLSUtJN5VQ8fZr9mYMsE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dWRhYm9sLmVkdS5i/by93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NS8wMS9sb2dvLXVk/YWJvbC1pY29uLndl/YnA" alt="UDABOL Logo" class="logo">
+            <h1>Registro para Programa de Becas 2026</h1>
+        </div>
+        <div class="form-description">
+            <p>Complete este formulario para participar en el sorteo de becas completas y parciales para estudios universitarios en UDABOL. Los ganadores serán notificados por correo electrónico y teléfono.</p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+        </div>
+        <div class="progress-text">Página 1 de 2</div>
+        <form id="scholarship-form">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="required" for="ci">Carnet de Identidad</label>
+                    <input type="text" id="ci" name="ci" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="firstname">Nombres</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="lastname">Apellidos</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="phone">Número de Celular</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message">Ingrese un correo electrónico válido</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="school">Colegio</label>
+                    <input type="text" id="school" name="school" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="grade">Curso</label>
+                    <input type="text" id="grade" name="grade" required>
+                    <div class="error-message">Este campo es obligatorio</div>
+                </div>
+                <button type="submit" class="submit-btn">Siguiente</button>
+            </div>
+        </form>
+        <div class="footer">
+            <p>Universidad de Aquino Bolivia - UDABOL © 2025</p>
+            <p>Este formulario es confidencial y los datos proporcionados serán utilizados exclusivamente para el proceso de selección de becas.</p>
+        </div>
+    </div>
+    
+    <div id="phishing-reveal">
+        <h1>¡Esto fue una simulación de phishing!</h1>
+        <p>
+            Como parte del taller de seguridad informática, acabas de experimentar cómo funciona un ataque de phishing.
+            Los datos que ingresaste podrían haber sido capturados por ciberdelincuentes si esto hubiera sido un ataque real.
+        </p>
+        <h2>¿Cómo detectar un intento de phishing?</h2>
+        <ul>
+            <li>Verifica siempre la URL del sitio web (en este caso no era un dominio oficial de UDABOL)</li>
+            <li>Desconfía de ofertas demasiado buenas para ser verdad</li>
+            <li>Revisa errores ortográficos o de diseño</li>
+            <li>Comprueba si hay una conexión segura (https y candado)</li>
+            <li>No compartas información personal a menos que estés seguro de la legitimidad del sitio</li>
+        </ul>
+        <p style="text-align: center; margin-top: 30px;">
+            <button onclick="window.location.reload()">Volver al inicio</button>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('scholarship-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capturar los datos del formulario (solo para fines de demostración)
+            const formData = {
+                ci: document.getElementById('ci').value,
+                firstname: document.getElementById('firstname').value,
+                lastname: document.getElementById('lastname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                school: document.getElementById('school').value,
+                grade: document.getElementById('grade').value
+            };
+            
+            // Mostrar alerta
+            alert('¡Datos capturados! Esta es una demostración de phishing para fines educativos.');
+            
+            // Ocultar el formulario y mostrar la página explicativa
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('phishing-reveal').style.display = 'block';
+            
+            // En un escenario real de phishing, aquí se enviarían los datos a un servidor
+            console.log('Datos capturados (solo para demostración):', formData);
+        });
+    </script>
+</body>
+</html>
